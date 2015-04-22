@@ -7,6 +7,7 @@ FILELIST="A=$BOOKDIR/ASS_042_Krishna_Yajurvediya_Taittiriya_Samhita_Part_1_-_Kas
 # pdftk $FILELIST cat X1 Z216-219 Y131 Y132 J289-290 Y132 L307 Y132 A75-81 Y133 D59 D70 output $DESTDIRDIR/udaka_shAnti_1_kalasha_sthApanam.pdf
 # pdftk $FILELIST cat X1 Y19 O60 Y19 A10-15 Y19 Q899 Y19 R400 output $DESTDIRDIR/udaka_shAnti_2_vedAdiH.pdf
 # pdftk $FILELIST cat  X1-2 Y134-135 A326-333 Y136-137 B315-324 output $DESTDIRDIR/udaka_shAnti_3_raxoghnAdiH.pdf
-pdftk $FILELIST cat  X2 Y137 J351-352 Y138 J354-356 output $DESTDIRDIR/udaka_shAnti_4_AraNyakAMshaH.pdf
+# pdftk $FILELIST cat  X2 Y137 J351-352 Y138 J354-356 output $DESTDIRDIR/udaka_shAnti_4_AraNyakAMshaH.pdf
+pdftk $(ls $DESTDIRDIR/udaka_shAnti_*_*.pdf) output $DESTDIRDIR/udaka_shAnti_all.pdf
 # C93-99 
 # Y19 P1035 
