@@ -1,4 +1,7 @@
 #! /bin/bash
+# Binaries needed: 
+# pdftk
+# cpdf from http://community.coherentpdf.com/ .
 set -x #echo on
 #BOOKDIR=~/books
 BOOKDIR=~/books/vedAH
@@ -9,11 +12,12 @@ FILELIST="A=$BOOKDIR/ASS_042_Krishna_Yajurvediya_Taittiriya_Samhita_Part_1_-_Kas
 # pdftk $FILELIST cat  X1-2 Y134-135 A326-333 Y136-137 B315-324 output $DESTDIRDIR/udaka_shAnti_3_raxoghnAdiH.pdf
 # pdftk $FILELIST cat  X2 Y137 J351-352 Y138 J354-356 output $DESTDIRDIR/udaka_shAnti_4_AraNyakAMshaH.pdf
 # pdftk $FILELIST cat  X2 Y138 C93-99 Y139 D148 D150 Y140 D158-161 output $DESTDIRDIR/udaka_shAnti_5_saMhitAMshaH.pdf
-#pdftk $FILELIST cat  X2 Y141 G213-214 E216-217 Y141-142 E286-290 output $DESTDIRDIR/udaka_shAnti_6_ApyAdikam.pdf
-# pdftk $FILELIST cat  X2 Y144 F219 F223-227 Y145-146 F330-333 Y146-147 F444-451 Y148 F491-492 output $DESTDIRDIR/udaka_shAnti_7_sarpsUktAdiH.pdf
+# pdftk $FILELIST cat  X2 Y141 G213-214 E216-217 Y141-142 E286-290 output $DESTDIRDIR/udaka_shAnti_6_ApyAdikam.pdf
+# pdftk $FILELIST cat  X2 Y144 F219 F224-227 Y145-146 F330-333 Y146-147 F444-451 Y148 F491-492 output $DESTDIRDIR/udaka_shAnti_7_sarpsUktAdiH.pdf
 # pdftk $(ls $DESTDIRDIR/udaka_shAnti_*_*.pdf) output $DESTDIRDIR/udaka_shAnti_all.pdf
 # C93-99 
 # Y19 P1035 
+
 for f in $(ls $DESTDIRDIR/udaka_shAnti_*_*.pdf); do
 cpdf -scale-to-fit a4portrait $f -o $DESTDIRDIR/A4/${f##*/}
 done
